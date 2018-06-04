@@ -1,0 +1,1 @@
+This is an experiment for a plugin based version of the Flogo CLI. Please do not use this for production use cases... Check out the official [Flogo CLI](https://github.com/TIBCOSoftware/flogo-cli)
