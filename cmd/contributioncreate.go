@@ -11,11 +11,11 @@ import (
 	"github.com/spf13/cobra"
 )
 
-// genCmd represents the generate command
-var genCmd = &cobra.Command{
-	Use:   "generate",
+// contribCreateCmd represents the generate command
+var contribCreateCmd = &cobra.Command{
+	Use:   "create",
 	Short: "Generate a new contribution for Project Flogo",
-	Run:   runGen,
+	Run:   runContribCreate,
 }
 
 // Flags
@@ -31,15 +31,15 @@ var (
 
 // init registers the command and flags
 func init() {
-	rootCmd.AddCommand(genCmd)
-	genCmd.Flags().StringVarP(&genType, "type", "t", "", "The type of contribution you want to generate (\"action\"|\"activity\"|\"flowmodel\"|\"trigger\") (required)")
-	genCmd.Flags().StringVarP(&genName, "name", "n", "", "The name you want to give your contribution (required)")
-	genCmd.MarkFlagRequired("type")
-	genCmd.MarkFlagRequired("name")
+	contribCmd.AddCommand(contribCreateCmd)
+	contribCreateCmd.Flags().StringVarP(&genType, "type", "t", "", "The type of contribution you want to generate (\"action\"|\"activity\"|\"flowmodel\"|\"trigger\") (required)")
+	contribCreateCmd.Flags().StringVarP(&genName, "name", "n", "", "The name you want to give your contribution (required)")
+	contribCreateCmd.MarkFlagRequired("type")
+	contribCreateCmd.MarkFlagRequired("name")
 }
 
-// runGen is the actual execution of the command
-func runGen(cmd *cobra.Command, args []string) {
+// runContribCreate is the actual execution of the command
+func runContribCreate(cmd *cobra.Command, args []string) {
 	contribution := genType
 	name := genName
 
